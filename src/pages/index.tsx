@@ -1,23 +1,11 @@
-import axios from 'axios';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-
-type GssType = {
-  count: number;
-};
+import { useEffect } from 'react';
+import { useGss } from '../hook/getGss';
 
 const Home: React.FC = () => {
-  const [gss, setGss] = useState<Array<GssType>>([]);
+  const { getGss, gss } = useGss();
+
   useEffect(() => {
-    const getGss = () => {
-      axios
-        .get<Array<GssType>>(
-          'https://api.steinhq.com/v1/storages/627bbaacbca21f053e928f18/downloadCount',
-        )
-        .then((res) => {
-          setGss(res.data);
-        });
-    };
     getGss();
   }, []);
 
@@ -26,7 +14,7 @@ const Home: React.FC = () => {
       <header>
         <div>
           {gss.map((row, index) => (
-            <p key={index}>＼ 現在 {row.count}名 がダウンロード ／</p>
+            <p key={index}>\ 現在 {row.count}名 がダウンロード /</p>
           ))}
         </div>
         <button className='m-2 rounded bg-primary-500 py-2 px-4 font-bold text-white hover:bg-primary-700'>
