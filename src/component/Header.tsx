@@ -4,7 +4,7 @@ import { FwywdLogo } from './atom/logo/FwywdLogo';
 
 export const Header: React.FC = () => (
   <>
-    <div className='justify-between bg-primary-800 px-8 md:flex'>
+    <div className='justify-between bg-primary-800 px-8 lg:flex'>
       <FwywdLogo />
       <div className='font-medium my-auto flex justify-center text-white md:text-lg'>
         <SLink toLink='/'>TOP</SLink>
