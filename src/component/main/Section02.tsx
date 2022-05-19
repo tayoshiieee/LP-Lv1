@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
+import { TextWithIcon } from '../atom/text-decoration/TextWithIcon';
+import { TextWithUnderbar } from '../atom/text-decoration/TextWithUnderbar';
 
 export const Section02: React.FC = () => (
   <>
-    <div className='flex flex-col items-center space-y-12 bg-primary-50 py-20 font-body'>
+    <div className='flex flex-col items-center space-y-12 bg-primary-50 py-24 font-body'>
       <TextWithUnderbar textDef='夢を叶える仲間が欲しい、あなたへ' />
       <div className='flex flex-col items-center'>
         <div className='space-y-4'>
@@ -53,39 +55,5 @@ const CardWithIndex: React.FC<CardProps> = (props: CardProps) => {
         <p className='px-20 font-bold'>{text}</p>
       </div>
     </div>
-  );
-};
-
-type Onlichildren = {
-  textDef: string;
-  textCus?: string;
-};
-
-const TextWithUnderbar: React.FC<Onlichildren> = (props: Onlichildren) => {
-  const { textDef, textCus } = props;
-  return (
-    <div className='text-center'>
-      <p className='inline-block border-b-8 border-b-yellow text-2xl font-bold tracking-wide text-primary-800'>
-        {textDef}
-        <span className='text-lg'>{textCus}</span>
-      </p>
-    </div>
-  );
-};
-
-type Props = {
-  img: string;
-  children: string;
-};
-
-const TextWithIcon: React.FC<Props> = (props: Props) => {
-  const { img, children } = props;
-  return (
-    <>
-      <div className='flex items-center'>
-        <Image src={img} alt='check-mark' width={36} height={36} objectFit='contain' />
-        <p className='ml-2 font-bold text-primary-800'>{children}</p>
-      </div>
-    </>
   );
 };

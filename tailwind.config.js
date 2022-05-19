@@ -67,6 +67,8 @@ module.exports = {
         top: "url('/img/bg-top.png')",
         topSp1: "url('/img/bg-top-sp1.png')",
         topSp2: "url('/img/bg-top-sp2.png')",
+        sec3: "url('/img/bg-sec3.png')",
+        sec3Sp: "url('/img/bg-sec3-sp.png')",
       }),
     },
   },
