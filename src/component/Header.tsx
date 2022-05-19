@@ -31,7 +31,7 @@ const SLink = (props: HeaderLink) => {
   return (
     <ScrollLink
       to={toLink}
-      className='mx-2 py-8 px-8 hover:cursor-pointer hover:border-b-2 hover:bg-primary-600 md:mx-4'
+      className='mx-2 py-8 px-2 hover:cursor-pointer hover:border-b-2 hover:bg-primary-600 md:mx-4 md:px-8'
       smooth={true}
       duration={300}
     >

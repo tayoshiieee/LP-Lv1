@@ -61,6 +61,7 @@ module.exports = {
       lg: '1.5rem',
       xl: '1.875rem',
       '2xl': '2.25rem',
+      '3xl': '3rem',
     },
     extend: {
       backgroundImage: (theme) => ({

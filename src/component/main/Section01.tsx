@@ -10,12 +10,14 @@ export const Section01: React.FC = () => {
 
   return (
     <>
-      <div className='m-4 mx-auto h-[800px] bg-no-repeat py-6 md:bg-top'>
-        <div className='max-w-3xl p-24'>
-          <p className='font-mono tracking-wide text-shadow-white md:text-[64px]'>
+      <div className='m-4 mx-auto bg-topSp2 bg-no-repeat px-4 py-6 md:h-[800px] md:bg-top'>
+        <div className='max-w-3xl md:p-24'>
+          <p className='font-mono text-xl tracking-wide text-shadow-white md:text-[64px]'>
             良心ある自己実現ができる世界へ
           </p>
-          <p className='font-mono pt-8 text-xl tracking-wide'>貢献が正しく評価される仕組みを創る</p>
+          <p className='font-mono pt-8 tracking-wide md:text-xl'>
+            貢献が正しく評価される仕組みを創る
+          </p>
           <div className='inline-block pt-24 text-center'>
             <div className=''>
               {gss.map((row, index) => (

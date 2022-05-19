@@ -5,7 +5,7 @@ import { TextWithUnderbar } from '../atom/text-decoration/TextWithUnderbar';
 
 export const Section02: React.FC = () => (
   <>
-    <div className='flex flex-col items-center space-y-12 bg-primary-50 py-24 font-body'>
+    <div className='flex flex-col items-center space-y-12 bg-primary-50 px-4 py-24 font-body'>
       <TextWithUnderbar textDef='夢を叶える仲間が欲しい、あなたへ' />
       <div className='flex flex-col items-center'>
         <div className='space-y-4'>
@@ -47,12 +47,14 @@ type CardProps = {
 const CardWithIndex: React.FC<CardProps> = (props: CardProps) => {
   const { index, titleLg, titleSm, img, text } = props;
   return (
-    <div className='min-w-full max-w-md rounded bg-white text-center shadow-md shadow-primary-200'>
+    <div className='min-w-full max-w-md  rounded bg-white text-center shadow-md shadow-primary-200'>
       <p className='absolute bg-primary-800 py-1 px-5 text-base text-white'>{index}</p>
-      <div className='px-8 py-12 text-primary-800'>
+      <div className='flex flex-col items-center space-y-4 px-8 py-12 text-primary-800'>
         <TextWithUnderbar textDef={titleLg} textCus={titleSm} />
-        <Image src={img} alt={img} width={315} height={315} objectFit='contain' />
-        <p className='px-20 font-bold'>{text}</p>
+        <div>
+          <Image src={img} alt={img} width={315} height={315} objectFit='contain' />
+        </div>
+        <p className='max-w-[300px] text-base font-bold md:text-lg'>{text}</p>
       </div>
     </div>
   );

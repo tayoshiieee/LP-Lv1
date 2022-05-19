@@ -13,7 +13,7 @@ export const Footer: React.FC = () => (
           </div>
           <div>
             <div className='mb-4 flex justify-center'>
-              <p>\ SNS でシェア /</p>
+              <p className='text-base md:text-lg'>\ SNS でシェア /</p>
             </div>
             <div className='flex'>
               <SnsIcon img={'/img/facebook.png'} />
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => (
           />
         </div>
         <div className='mt-10 flex justify-center py-10'>
-          <p>©️ 2022, KIKAGAKU, Inc., All right reserved.</p>
+          <p className='text-base md:text-lg'>©️ 2022, KIKAGAKU, Inc., All right reserved.</p>
         </div>
       </div>
     </div>
@@ -60,8 +60,10 @@ type FooterLinks = {
 const FooterLinks = (props: FooterLinks) => {
   const { heading, link1, link2, link3, link4 } = props;
   return (
-    <div>
-      <p className='font-bold'>{heading}</p>
+    <div className='text-base md:text-lg'>
+      <div>
+        <p className='font-bold'>{heading}</p>
+      </div>
       <div className='mt-4 font-light'>
         <SLink toLink='/'>{link1}</SLink>
         <SLink toLink='/'>{link2}</SLink>

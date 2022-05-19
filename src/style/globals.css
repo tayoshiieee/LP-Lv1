@@ -13,3 +13,7 @@
     @apply text-lg;
   }
 }
+
+/* デバイス幅が480px以下 */
+@media screen and (max-width: 480px) {
+}
