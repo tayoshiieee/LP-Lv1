@@ -5,7 +5,7 @@ import { TextWithUnderbar } from '../atom/text-decoration/TextWithUnderbar';
 
 export const Section02: React.FC = () => (
   <>
-    <div className='flex flex-col items-center space-y-12 bg-primary-50 px-4 py-24 font-body'>
+    <div className='flex flex-col items-center space-y-12 bg-primary-50 px-4 py-24 font-body text-primary-800'>
       <TextWithUnderbar textDef='夢を叶える仲間が欲しい、あなたへ' />
       <div className='flex flex-col items-center'>
         <div className='space-y-4'>

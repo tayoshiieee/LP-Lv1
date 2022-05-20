@@ -21,6 +21,7 @@ export const Section04: React.FC = () => (
             subtax1='0'
             subprice2='3,000'
             subtax2='3,300'
+            isContentUnCheck1={true}
           />
           <p className='md:hidden'>\ おすすめ /</p>
           <CardForPrice
@@ -33,6 +34,10 @@ export const Section04: React.FC = () => (
             subtax1='11,000'
             subprice2='3,000'
             subtax2='3,300'
+            bgColor='bg-primary-800'
+            textColor='text-white'
+            isContentUnCheck1={true}
+            isContentUnCheck2={true}
           />
           <CardForPrice
             titleLg='フルサポート'
@@ -44,18 +49,19 @@ export const Section04: React.FC = () => (
             subtax1='66,000'
             subprice2='3,000'
             subtax2='3,300'
+            isContentUnCheck2={true}
           />
         </div>
       </div>
       <div className='flex flex-col items-center'>
         <div className='space-y-4'>
-          <TextWithIcon img={'/img/check.png'}>
+          <TextWithIcon>
             基本的には同じプランの方とチームになりますが、集まっている人数によって変動します。
           </TextWithIcon>
-          <TextWithIcon img={'/img/check.png'}>
+          <TextWithIcon>
             起業挑戦プランは Web 面接にてビジネスプランのプレゼンテーションで審査いたします。
           </TextWithIcon>
-          <TextWithIcon img={'/img/check.png'}>
+          <TextWithIcon>
             起業挑戦プランの方が初年度以降を継続希望の場合は月額 10,000
             円の標準プランへと自動的に移行します。
           </TextWithIcon>
@@ -75,60 +81,80 @@ type PriceProps = {
   subtax1: string;
   subprice2: string;
   subtax2: string;
+  bgColor?: string;
+  textColor?: string;
+  isContentUnCheck1?: boolean;
+  isContentUnCheck2?: boolean;
 };
 
 const CardForPrice: React.FC<PriceProps> = (props: PriceProps) => {
-  const { titleLg, titleSm, subtitle1, subtitle2, price, subprice1, subtax1, subprice2, subtax2 } =
-    props;
+  const {
+    titleLg,
+    titleSm,
+    subtitle1,
+    subtitle2,
+    price,
+    subprice1,
+    subtax1,
+    subprice2,
+    subtax2,
+    bgColor,
+    textColor,
+    isContentUnCheck1,
+    isContentUnCheck2,
+  } = props;
+
   return (
     <div className='min-w-full max-w-md rounded bg-white text-center font-normal shadow-md shadow-primary-200'>
-      <div className='flex flex-col items-center space-y-4 px-4 py-12 text-primary-800'>
-        <p className='max-w-[300px] text-base md:text-lg'>
-          <span className='text-2xl'>{titleLg}</span>
-          {titleSm}
-        </p>
-        <p>
-          {subtitle1}
-          <br />
-          {subtitle2}
-        </p>
-        <p className='max-w-[300px] text-base md:text-lg'>
-          月額
-          <span className='text-2xl'> {price} </span>円<span className='text-sm'>（税抜）</span>
-        </p>
-        <div className='space-y-6 divide-y-2 divide-primary-200'>
-          <div className='w-full'>
-            <div className='flex  justify-between'>
-              <div>
-                <p>会費</p>
+      <div className={bgColor}>
+        <div className={textColor}>
+          <div className='flex flex-col items-center space-y-4 px-4 py-12 '>
+            <p className='max-w-[300px] text-base md:text-lg'>
+              <span className='text-2xl'>{titleLg}</span>
+              {titleSm}
+            </p>
+            <p>
+              {subtitle1}
+              <br />
+              {subtitle2}
+            </p>
+            <p className='max-w-[300px] text-base md:text-lg'>
+              月額
+              <span className='text-2xl'> {price} </span>円<span className='text-sm'>（税抜）</span>
+            </p>
+            <div className='space-y-6 divide-y-2 divide-primary-200'>
+              <div className='w-full'>
+                <div className='flex  justify-between'>
+                  <div>
+                    <p>会費</p>
+                  </div>
+                  <div>
+                    <p>月額 {subprice1} 円</p>
+                    <p className='text-right text-sm'>税込 {subtax1} 円</p>
+                  </div>
+                </div>
+                <div className='flex w-full justify-between'>
+                  <div>
+                    <p>ツール利用料</p>
+                  </div>
+                  <div>
+                    <p>月額 {subprice2} 円</p>
+                    <p className='text-right text-sm'>税込 {subtax2} 円</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p>月額 {subprice1} 円</p>
-                <p className='text-right text-sm'>税込 {subtax1} 円</p>
+              <div className='space-y-2 pt-6'>
+                <TextWithIcon>仲間との学び</TextWithIcon>
+                <TextWithIcon>コース課題と解答集</TextWithIcon>
+                <TextWithIcon>イベント参加</TextWithIcon>
+                <TextWithIcon isUnCheck={isContentUnCheck1}>運営側の質問対応</TextWithIcon>
               </div>
-            </div>
-            <div className='flex w-full justify-between'>
-              <div>
-                <p>ツール利用料</p>
+              <div className='flex w-full flex-col items-center pt-6'>
+                <div className='space-y-2'>
+                  <TextWithIcon>入学試験</TextWithIcon>
+                  <TextWithIcon isUnCheck={isContentUnCheck2}>Web 面接</TextWithIcon>
+                </div>
               </div>
-              <div>
-                <p>月額 {subprice2} 円</p>
-                <p className='text-right text-sm'>税込 {subtax2} 円</p>
-              </div>
-            </div>
-          </div>
-          <div className='space-y-2 pt-6'>
-            <TextWithIcon img={'/img/check.png'}>仲間との学び</TextWithIcon>
-            <TextWithIcon img={'/img/check.png'}>コース課題と解答集</TextWithIcon>
-            <TextWithIcon img={'/img/check.png'}>イベント参加</TextWithIcon>
-            <TextWithIcon img={'/img/check-off.png'} color='text-primary-200'>
-              運営側の質問対応
-            </TextWithIcon>
-          </div>
-          <div className='flex w-full flex-col items-center pt-6'>
-            <div className='space-y-2'>
-              <TextWithIcon img={'/img/check.png'}>入学試験</TextWithIcon>
-              <TextWithIcon img={'/img/check.png'}>Web 面接</TextWithIcon>
             </div>
           </div>
         </div>
