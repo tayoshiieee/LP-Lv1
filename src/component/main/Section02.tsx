@@ -9,11 +9,9 @@ export const Section02: React.FC = () => (
       <TextWithUnderbar textDef='夢を叶える仲間が欲しい、あなたへ' />
       <div className='flex flex-col items-center'>
         <div className='space-y-4'>
-          <TextWithIcon img={'/img/check.png'}>新しいことを始めたい気持ちは強い</TextWithIcon>
-          <TextWithIcon img={'/img/check.png'}>
-            学びに必要な教材がたくさんあることは知っている
-          </TextWithIcon>
-          <TextWithIcon img={'/img/check.png'}>最後のひと押しの勇気が欲しい</TextWithIcon>
+          <TextWithIcon>新しいことを始めたい気持ちは強い</TextWithIcon>
+          <TextWithIcon>学びに必要な教材がたくさんあることは知っている</TextWithIcon>
+          <TextWithIcon>最後のひと押しの勇気が欲しい</TextWithIcon>
         </div>
       </div>
       <div className='mx-autp max-w-lg justify-center space-y-16 md:flex md:space-x-24 md:space-y-0'>
