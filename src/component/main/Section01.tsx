@@ -10,20 +10,23 @@ export const Section01: React.FC = () => {
 
   return (
     <>
-      <div className='m-4 mx-auto h-[800px] bg-top bg-no-repeat py-6'>
-        <div className='max-w-3xl p-24'>
-          <p className='font-mono text-[64px] tracking-wide text-shadow-white'>
+      <div className='m-4 mx-auto bg-topSp2 bg-no-repeat px-4 py-6 lg:h-[800px] lg:bg-top'>
+        <div className='flex max-w-3xl flex-col items-center md:items-start md:p-16 lg:block lg:p-24'>
+          <p className='font-mono text-2xl tracking-wide text-shadow-white md:text-3xl lg:text-[64px]'>
             良心ある自己実現ができる世界へ
           </p>
-          <p className='pt-8 font-mono text-xl tracking-wide'>貢献が正しく評価される仕組みを創る</p>
-          <div className='inline-block pt-24 text-center'>
-            <div className=''>
+          <p className='font-mono tracking-wide md:pt-8 md:text-xl'>
+            貢献が正しく評価される仕組みを創る
+          </p>
+          <div className='inline-block pt-4 text-center lg:pt-24'>
+            <div>
               {gss.map((row, index) => (
                 <p
                   key={index}
-                  className='bg-gradient-to-r from-orange to-yellow bg-clip-text font-mono font-bold text-transparent '
+                  className='font-mono bg-gradient-to-r from-orange to-yellow bg-clip-text text-base font-bold text-transparent '
                 >
-                  \ 現在 <span className='text-xl font-normal'>{row.count}</span> 名がダウンロード /
+                  \ 現在 <span className='text-2xl font-normal'>{row.count}</span> 名がダウンロード
+                  /
                 </p>
               ))}
             </div>

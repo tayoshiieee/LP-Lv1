@@ -1,19 +1,23 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    // stroke
-    // textFillColor: (theme) => theme('borderColor'),
-    // textStrokeColor: (theme) => theme('borderColor'),
-    // textStrokeWidth: (theme) => theme('borderWidth'),
-    // paintOrder: {
-    //   fsm: { paintOrder: 'fill stroke markers' },
-    //   fms: { paintOrder: 'fill markers stroke' },
-    //   sfm: { paintOrder: 'stroke fill markers' },
-    //   smf: { paintOrder: 'stroke markers fill' },
-    //   mfs: { paintOrder: 'markers fill stroke' },
-    //   msf: { paintOrder: 'markers stroke fill' },
-    // },
-
+    fontFamily: {
+      body: [
+        'YuGothic',
+        'Yu Gothic',
+        'Avenir',
+        'Helvetica Neue',
+        'Helvetica',
+        'Arial',
+        'Hiragino Sans',
+        'ヒラギノ角ゴシック',
+        'メイリオ',
+        'Meiryo',
+        'MS Pゴシック',
+        'MS PGothic',
+        'sans-serif',
+      ],
+    },
     fontWeight: {
       light: 300,
       normal: 400,
@@ -57,50 +61,28 @@ module.exports = {
       lg: '1.5rem',
       xl: '1.875rem',
       '2xl': '2.25rem',
+      '3xl': '3rem',
     },
     extend: {
       backgroundImage: (theme) => ({
         top: "url('/img/bg-top.png')",
         topSp1: "url('/img/bg-top-sp1.png')",
         topSp2: "url('/img/bg-top-sp2.png')",
+        sec3: "url('/img/bg-sec3.png')",
+        sec3Sp: "url('/img/bg-sec3-sp.png')",
       }),
     },
   },
-  // variants: {
-  //   // all the following default to ['responsive']
-  //   textFillColor: ['responsive'],
-  //   textStrokeColor: ['responsive'],
-  //   textStrokeWidth: ['responsive'],
-  //   paintOrder: ['responsive'],
-  // },
+
   plugins: [
     // require('tailwindcss-text-fill-stroke')(), // text-stroke
     function ({ addUtilities }) {
       //text-shadow
       const newUtilities = {
-        // '.text-shadow': {
-        //   textShadow: '0px 2px 3px darkgrey',
-        // },
-        // '.text-shadow-md': {
-        //   textShadow: '0px 3px 3px darkgrey',
-        // },
-        // '.text-shadow-lg': {
-        //   textShadow: '0px 5px 3px darkgrey',
-        // },
-        // '.text-shadow-xl': {
-        //   textShadow: '0px 7px 3px darkgrey',
-        // },
-        // '.text-shadow-2xl': {
-        //   textShadow: '0px 10px 3px darkgrey',
-        // },
-        // '.text-shadow-none': {
-        //   textShadow: 'none',
-        // },
         '.text-shadow-white': {
           textShadow: '0px 2px 0px white, 0px -2px 0px white, 2px 0px 0px white,-2px 0px 0px white',
         },
       };
-
       addUtilities(newUtilities);
     },
   ],
