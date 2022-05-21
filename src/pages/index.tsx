@@ -13,7 +13,9 @@ const Home: React.FC = () => (
     </header>
     <main>
       <Section01 />
-      <Section02 />
+      <div id='problem'>
+        <Section02 />
+      </div>
       <Section03 />
       <Section04 />
       <Section05 />

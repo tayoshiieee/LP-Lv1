@@ -3,14 +3,14 @@ import { TextWithIcon } from '../atom/text-decoration/TextWithIcon';
 
 export const Section04: React.FC = () => (
   <>
-    <div className='flex flex-col items-center space-y-12 bg-primary-50 px-4 py-24 font-body font-bold text-primary-800'>
+    <div className='flex flex-col items-center space-y-8 bg-primary-50 px-4 py-8 font-body font-bold text-primary-800 lg:space-y-12 lg:py-24'>
       <div className='text-center'>
-        <p className='md:text-3xl'>料金</p>
+        <p className='text-2xl lg:text-3xl'>料金</p>
         <p className='pt-4'>\ 学びのスタイルに合わせた３つのプランを用意 /</p>
       </div>
       <div>
-        <p className='hidden text-center md:block'>\ おすすめ /</p>
-        <div className='mx-auto max-w-[410px] justify-center space-y-16 md:flex md:space-x-6 md:space-y-0'>
+        <p className='hidden text-center lg:block'>\ おすすめ /</p>
+        <div className='mx-auto max-w-[410px] justify-center space-y-16 lg:flex lg:space-x-6 lg:space-y-0'>
           <CardForPrice
             titleLg='起業挑戦'
             titleSm='プラン'
@@ -23,7 +23,7 @@ export const Section04: React.FC = () => (
             subtax2='3,300'
             isContentUnCheck1={true}
           />
-          <p className='md:hidden'>\ おすすめ /</p>
+          <p className='text-center lg:hidden'>\ おすすめ /</p>
           <CardForPrice
             titleLg='スタンダード'
             titleSm='プラン'
@@ -105,15 +105,15 @@ const CardForPrice: React.FC<PriceProps> = (props: PriceProps) => {
   } = props;
 
   return (
-    <div className='min-w-full max-w-md rounded bg-white text-center font-normal shadow-md shadow-primary-200'>
+    <div className='min-w-full rounded bg-white text-center font-normal shadow-md shadow-primary-200'>
       <div className={bgColor}>
         <div className={textColor}>
-          <div className='flex flex-col items-center space-y-4 px-4 py-12 '>
-            <p className='max-w-[300px] text-base md:text-lg'>
+          <div className='flex flex-col items-center space-y-4 px-8 py-12 '>
+            <p className='max-w-[300px]'>
               <span className='text-2xl'>{titleLg}</span>
               {titleSm}
             </p>
-            <p>
+            <p className='text-base md:text-lg'>
               {subtitle1}
               <br />
               {subtitle2}
@@ -122,32 +122,34 @@ const CardForPrice: React.FC<PriceProps> = (props: PriceProps) => {
               月額
               <span className='text-2xl'> {price} </span>円<span className='text-sm'>（税抜）</span>
             </p>
-            <div className='space-y-6 divide-y-2 divide-primary-200'>
-              <div className='w-full'>
-                <div className='flex  justify-between'>
+            <div className='w-full space-y-6 divide-y-2 divide-primary-200'>
+              <div>
+                <div className='flex justify-between'>
                   <div>
-                    <p>会費</p>
+                    <p className='text-base md:text-lg'>会費</p>
                   </div>
                   <div>
-                    <p>月額 {subprice1} 円</p>
+                    <p className='text-base md:text-lg'>月額 {subprice1} 円</p>
                     <p className='text-right text-sm'>税込 {subtax1} 円</p>
                   </div>
                 </div>
-                <div className='flex w-full justify-between'>
+                <div className='flex justify-between pt-2'>
                   <div>
-                    <p>ツール利用料</p>
+                    <p className='text-base md:text-lg'>ツール利用料</p>
                   </div>
                   <div>
-                    <p>月額 {subprice2} 円</p>
+                    <p className='text-base md:text-lg'>月額 {subprice2} 円</p>
                     <p className='text-right text-sm'>税込 {subtax2} 円</p>
                   </div>
                 </div>
               </div>
-              <div className='space-y-2 pt-6'>
-                <TextWithIcon>仲間との学び</TextWithIcon>
-                <TextWithIcon>コース課題と解答集</TextWithIcon>
-                <TextWithIcon>イベント参加</TextWithIcon>
-                <TextWithIcon isUnCheck={isContentUnCheck1}>運営側の質問対応</TextWithIcon>
+              <div className='flex flex-col items-center'>
+                <div className='space-y-2 pt-6 '>
+                  <TextWithIcon>仲間との学び</TextWithIcon>
+                  <TextWithIcon>コース課題と解答集</TextWithIcon>
+                  <TextWithIcon>イベント参加</TextWithIcon>
+                  <TextWithIcon isUnCheck={isContentUnCheck1}>運営側の質問対応</TextWithIcon>
+                </div>
               </div>
               <div className='flex w-full flex-col items-center pt-6'>
                 <div className='space-y-2'>

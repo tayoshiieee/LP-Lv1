@@ -10,16 +10,16 @@ export const Section01: React.FC = () => {
 
   return (
     <>
-      <div className='m-4 mx-auto bg-topSp2 bg-no-repeat px-4 py-6 md:h-[800px] md:bg-top'>
-        <div className='max-w-3xl md:p-24'>
-          <p className='font-mono text-xl tracking-wide text-shadow-white md:text-[64px]'>
+      <div className='m-4 mx-auto bg-topSp2 bg-no-repeat px-4 py-6 lg:h-[800px] lg:bg-top'>
+        <div className='flex max-w-3xl flex-col items-center md:p-16 lg:block lg:p-24'>
+          <p className='font-mono text-xl tracking-wide text-shadow-white md:text-3xl lg:text-[64px]'>
             良心ある自己実現ができる世界へ
           </p>
           <p className='font-mono pt-8 tracking-wide md:text-xl'>
             貢献が正しく評価される仕組みを創る
           </p>
-          <div className='inline-block pt-24 text-center'>
-            <div className=''>
+          <div className='inline-block pt-8 text-center lg:pt-24'>
+            <div>
               {gss.map((row, index) => (
                 <p
                   key={index}

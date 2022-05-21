@@ -4,12 +4,13 @@ import { TextWithUnderbar } from '../atom/text-decoration/TextWithUnderbar';
 
 export const Section03: React.FC = () => (
   <>
-    <div className='my-32 flex flex-col items-center space-y-16 bg-sec3 px-4 py-10 font-body'>
+    <div className='flex flex-col items-center space-y-16 bg-sec3 px-4 py-10 font-body lg:my-32'>
       <TextWithUnderbar textDef='あなたが本気で変わるために必要な２つの条件' />
       <p className='text-center font-bold text-primary-800 md:text-[48px]'>
-        成果 = モチベーション × 能力
+        成果 =<br className='lg:hidden' />
+        モチベーション × 能力
       </p>
-      <div className='mx-autp max-w-lg justify-center space-y-16 md:flex md:space-x-24 md:space-y-0'>
+      <div className='mx-autp max-w-lg justify-center space-y-16 lg:flex lg:space-x-24 lg:space-y-0'>
         <Card
           index='仲間'
           titleLg='モチベーション'
@@ -28,7 +29,8 @@ export const Section03: React.FC = () => (
         />
       </div>
       <p className='max-w-5xl text-center font-bold text-primary-800 md:text-2xl'>
-        良き仲間と目的を持った学びができる環境を提供します。
+        良き仲間と目的を持った
+        <br className='lg:hidden' /> 学びができる環境を提供します。
         <br />
         成果に繋がる学びがここにあります。
       </p>
